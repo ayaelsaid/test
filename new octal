@@ -1,0 +1,42 @@
+/**
+ * sp_print_binary - ...
+ * @arg: ...
+ * Return: ...
+*/
+int sp_print_octal(va_list arg) {
+ unsigned int number = va_arg(arg, unsigned int);
+    int i = 0;
+    int j;
+    int number_count = 0;
+    unsigned int *octal_num;
+    int count = 0;
+    unsigned int temp = number;  // Store the original value in temp
+
+    if (number == 0)
+	{
+		_putchar('0');
+		number_count ++;
+		return (number_count);
+	}
+    while (temp > 0) {
+        count++;
+        temp /= 2;
+    }
+    octal_num = malloc(sizeof(unsigned int) * (count + 1));
+    if (octal_num == NULL)
+        return -1;
+        temp = number;
+    while (temp > 0) {
+        octal_num[i] = temp % 8;
+        temp /= 8;
+        i++;
+        number_count++;
+    }
+    j = i - 1;
+    while (j >= 0) {
+        _putchar(octal_num[j] + '0');
+        j--;
+    }
+    free(octal_num);
+    return number_count;
+}
