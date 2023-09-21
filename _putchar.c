@@ -8,7 +8,7 @@
 int _putchar(char c)
 {
 
-        return (write(1, &c, 1));
+	return (write(1, &c, 1));
 }
 
 /**
@@ -19,12 +19,12 @@ int _putchar(char c)
 
 int sp_print_char(va_list arg)
 {
-        int char_count = 0;
-        int ch = va_arg(arg, int);
+	int char_count = 0;
+	int ch = va_arg(arg, int);
 
-        _putchar(ch);
-        char_count++;
-        return (char_count);
+	_putchar(ch);
+	char_count++;
+	return (char_count);
 }
 /**
  * sp_printf_per - function prints 37
@@ -33,7 +33,10 @@ int sp_print_char(va_list arg)
  */
 int sp_printf_per(va_list arg)
 {
-        int char_count = 0;
+	int char_count = 0;
 
-        (void)arg;
-        _putchar('%');
+	(void)arg;
+	_putchar('%');
+	char_count++;
+	return (char_count);
+}
